@@ -1,0 +1,14 @@
+<h1>Formulario de Autos</h1>
+
+<form [formGroup]="form">
+  <select formControlName="brand" (change)="onBrandSelected($event)">
+    @for (b of brands(); track b.id) {
+      <option value="{{ b.id }}">{{ b.name }}</option>
+    }
+  </select>
+  <select formControlName="model" (change)="onModelSelected($event)">
+    @for (m of models(); track m.id) {
+      <option value="{{ m.id }}">{{ m.name }}</option>
+    }
+  </select>
+</form>

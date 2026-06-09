@@ -1,0 +1,107 @@
+<main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+  <div class="w-full max-w-6xl">
+    <div class="text-center">
+      <p class="text-base font-semibold text-indigo-600">Vehicle Catalog</p>
+
+      <h1 class="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+        Cars List
+      </h1>
+
+      <p class="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+        Browse and manage all registered vehicles in your catalog.
+      </p>
+    </div>
+
+    <div class="mt-12 flex items-center justify-end">
+      <a
+        routerLink="/cars-form"
+        class="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500"
+      >
+        Add Vehicle
+      </a>
+    </div>
+
+    <div class="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th
+              class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+            >
+              Brand
+            </th>
+            <th
+              class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+            >
+              Model
+            </th>
+            <th
+              class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+            >
+              Year
+            </th>
+            <th
+              class="px-6 py-4 text-right text-xs font-semibold uppercase tracking-wider text-gray-500"
+            >
+              Actions
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-100 bg-white">
+          @for (car of cars(); track car.id) {
+            <tr class="hover:bg-gray-50">
+              <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+                {{ car.brand }}
+              </td>
+
+              <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+                {{ car.model }}
+              </td>
+              <!-- 
+              <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+                {{ car.year }}
+              </td> -->
+
+              <td class="whitespace-nowrap px-6 py-4 text-right text-sm">
+                <button
+                  type="button"
+                  class="mr-4 font-medium text-indigo-600 hover:text-indigo-500"
+                >
+                  Edit
+                </button>
+
+                <button type="button" class="font-medium text-red-600 hover:text-red-500">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="4" class="px-6 py-12 text-center text-sm text-gray-500">
+                No vehicles found.
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      <div class="rounded-lg border border-gray-200 p-6">
+        <h2 class="text-lg font-semibold text-gray-900">Total Vehicles</h2>
+        <p class="mt-2 text-sm text-gray-500">Keep track of all registered vehicles.</p>
+      </div>
+
+      <div class="rounded-lg border border-gray-200 p-6">
+        <h2 class="text-lg font-semibold text-gray-900">Management</h2>
+        <p class="mt-2 text-sm text-gray-500">Edit and organize vehicle information.</p>
+      </div>
+
+      <div class="rounded-lg border border-gray-200 p-6">
+        <h2 class="text-lg font-semibold text-gray-900">Catalog</h2>
+        <p class="mt-2 text-sm text-gray-500">Browse the available brands and models.</p>
+      </div>
+    </div>
+  </div>
+</main>

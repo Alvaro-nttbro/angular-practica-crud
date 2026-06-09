@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate:swagger:bff": "npx swagger-typescript-api generate --path ./swagger/swagger.json --output ./src/generated/api/ --name swagger.types.ts --no-client --no-route-types"
   },
   "private": true,
   "packageManager": "npm@11.6.3",

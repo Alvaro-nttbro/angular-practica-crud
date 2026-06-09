@@ -1,0 +1,9 @@
+import { HttpHandlerFn, HttpRequest } from '@angular/common/http';
+
+export const credentialsInterceptor = (req: HttpRequest<unknown>, next: HttpHandlerFn) => {
+  if (!req.url.startsWith('/api/')) {
+    return next(req);
+  }
+
+  return next(req.clone({ withCredentials: true }));
+};
