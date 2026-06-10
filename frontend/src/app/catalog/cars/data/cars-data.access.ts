@@ -1,11 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import {
-  CarDetailEntity,
-  CarSummary,
-  PaginatedMetaDto,
-} from '../../../../generated/api/swagger.types';
-import { CarRecordDetails, CarsPage, CarSummaryRecord, MetaPage } from '../cars.models';
+import { CarSummary, PaginatedMetaDto } from '../../../../generated/api/swagger.types';
+import { CarsPage, CarSummaryRecord, MetaPage } from '../cars.models';
 import { CarsApiClient } from './cars-api.client';
 
 export function mapCarToRecord(vo: CarSummary): CarSummaryRecord {
@@ -18,19 +14,19 @@ export function mapCarToRecord(vo: CarSummary): CarSummaryRecord {
   };
 }
 
-export function mapCarDetailsToRecord(vo: CarDetailEntity): CarRecordDetails {
-  return {
-    registrationDate: vo.registrationDate,
-    mileage: vo.mileage,
-    currency: vo.currency ?? 'EUR',
-    price: vo.price,
-    manufactureYear: vo.manufactureYear,
-    availability: vo.availability ?? true,
-    color: vo.color ?? '',
-    description: vo.description ?? '',
-    licensePlate: vo.licensePlate,
-  };
-}
+// export function mapCarDetailsToRecord(vo: CarDetailEntity): CarRecordDetails {
+//   return {
+//     registrationDate: vo.registrationDate,
+//     mileage: vo.mileage,
+//     currency: vo.currency ?? 'EUR',
+//     price: vo.price,
+//     manufactureYear: vo.manufactureYear,
+//     availability: vo.availability ?? true,
+//     color: vo.color ?? '',
+//     description: vo.description ?? '',
+//     licensePlate: vo.licensePlate,
+//   };
+// }
 
 export function mapMetaToRecord(vo: PaginatedMetaDto): MetaPage {
   return {

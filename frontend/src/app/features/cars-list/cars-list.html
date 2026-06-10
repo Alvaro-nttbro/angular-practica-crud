@@ -49,7 +49,7 @@
         </thead>
 
         <tbody class="divide-y divide-gray-100 bg-white">
-          @for (car of cars(); track car.id) {
+          @for (car of cars()?.items; track car.id) {
             <tr class="hover:bg-gray-50">
               <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
                 {{ car.brand }}

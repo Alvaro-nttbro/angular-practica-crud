@@ -43,7 +43,7 @@ export interface UserProfileDto {
    * Role assigned to the account. ADMIN can create, update and delete vehicles. USER has read-only access.
    * @example "ADMIN"
    */
-  role: "ADMIN" | "USER";
+  role: 'ADMIN' | 'USER';
 }
 
 export interface LoginResponseDto {
@@ -91,7 +91,7 @@ export interface PaginatedMetaDto {
 
 export interface PaginatedResponseDto {
   /** Collection of records returned for the current page */
-  items: any[][];
+  items: CarSummary[];
   /** Pagination metadata for the current query */
   meta: PaginatedMetaDto;
 }
@@ -157,48 +157,48 @@ export interface CarDetailEntity {
    * @example "EUR"
    */
   currency?:
-    | "EUR"
-    | "GBP"
-    | "CHF"
-    | "SEK"
-    | "NOK"
-    | "DKK"
-    | "PLN"
-    | "CZK"
-    | "HUF"
-    | "RON"
-    | "BGN"
-    | "HRK"
-    | "ARS"
-    | "BRL"
-    | "CLP"
-    | "COP"
-    | "PEN"
-    | "UYU"
-    | "PYG"
-    | "BOB"
-    | "VES"
-    | "USD"
-    | "CAD"
-    | "MXN"
-    | "JPY"
-    | "CNY"
-    | "INR"
-    | "KRW"
-    | "SGD"
-    | "HKD"
-    | "MYR"
-    | "IDR"
-    | "THB"
-    | "VND"
-    | "PKR"
-    | "AUD"
-    | "NZD"
-    | "ZAR"
-    | "EGP"
-    | "NGN"
-    | "KES"
-    | "GHS";
+    | 'EUR'
+    | 'GBP'
+    | 'CHF'
+    | 'SEK'
+    | 'NOK'
+    | 'DKK'
+    | 'PLN'
+    | 'CZK'
+    | 'HUF'
+    | 'RON'
+    | 'BGN'
+    | 'HRK'
+    | 'ARS'
+    | 'BRL'
+    | 'CLP'
+    | 'COP'
+    | 'PEN'
+    | 'UYU'
+    | 'PYG'
+    | 'BOB'
+    | 'VES'
+    | 'USD'
+    | 'CAD'
+    | 'MXN'
+    | 'JPY'
+    | 'CNY'
+    | 'INR'
+    | 'KRW'
+    | 'SGD'
+    | 'HKD'
+    | 'MYR'
+    | 'IDR'
+    | 'THB'
+    | 'VND'
+    | 'PKR'
+    | 'AUD'
+    | 'NZD'
+    | 'ZAR'
+    | 'EGP'
+    | 'NGN'
+    | 'KES'
+    | 'GHS';
   /**
    * Asking price of the car (must be a positive number)
    * @min 1
@@ -274,48 +274,48 @@ export interface CarDetailsDto {
    * @example "EUR"
    */
   currency?:
-    | "EUR"
-    | "GBP"
-    | "CHF"
-    | "SEK"
-    | "NOK"
-    | "DKK"
-    | "PLN"
-    | "CZK"
-    | "HUF"
-    | "RON"
-    | "BGN"
-    | "HRK"
-    | "ARS"
-    | "BRL"
-    | "CLP"
-    | "COP"
-    | "PEN"
-    | "UYU"
-    | "PYG"
-    | "BOB"
-    | "VES"
-    | "USD"
-    | "CAD"
-    | "MXN"
-    | "JPY"
-    | "CNY"
-    | "INR"
-    | "KRW"
-    | "SGD"
-    | "HKD"
-    | "MYR"
-    | "IDR"
-    | "THB"
-    | "VND"
-    | "PKR"
-    | "AUD"
-    | "NZD"
-    | "ZAR"
-    | "EGP"
-    | "NGN"
-    | "KES"
-    | "GHS";
+    | 'EUR'
+    | 'GBP'
+    | 'CHF'
+    | 'SEK'
+    | 'NOK'
+    | 'DKK'
+    | 'PLN'
+    | 'CZK'
+    | 'HUF'
+    | 'RON'
+    | 'BGN'
+    | 'HRK'
+    | 'ARS'
+    | 'BRL'
+    | 'CLP'
+    | 'COP'
+    | 'PEN'
+    | 'UYU'
+    | 'PYG'
+    | 'BOB'
+    | 'VES'
+    | 'USD'
+    | 'CAD'
+    | 'MXN'
+    | 'JPY'
+    | 'CNY'
+    | 'INR'
+    | 'KRW'
+    | 'SGD'
+    | 'HKD'
+    | 'MYR'
+    | 'IDR'
+    | 'THB'
+    | 'VND'
+    | 'PKR'
+    | 'AUD'
+    | 'NZD'
+    | 'ZAR'
+    | 'EGP'
+    | 'NGN'
+    | 'KES'
+    | 'GHS';
   /**
    * Asking price of the car (must be a positive number)
    * @min 1
@@ -402,12 +402,7 @@ export interface UploadedCarDocumentResponseDto {
    * Functional category assigned to the document
    * @example "inspection"
    */
-  documentType:
-    | "invoice"
-    | "inspection"
-    | "insurance"
-    | "registration"
-    | "other";
+  documentType: 'invoice' | 'inspection' | 'insurance' | 'registration' | 'other';
   /**
    * Optional display title for the document
    * @example "Ficha tecnica ITV"
